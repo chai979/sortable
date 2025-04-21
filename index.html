@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Table</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Registration Form</h2>
+
+    <form id="registrationForm" class="mb-4">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <input type="email" class="form-control" id="email" placeholder="Email" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <select class="form-control" id="gender" required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+
+    <!-- Filters -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="text" id="searchName" class="form-control" placeholder="Search by name">
+      </div>
+      <div class="col-md-6">
+        <select id="filterGender" class="form-control">
+          <option value="">All Genders</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-striped" id="dataTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Name 🔽</th>
+          <th onclick="sortTable(1)">Email 🔽</th>
+          <th onclick="sortTable(2)">Gender 🔽</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
